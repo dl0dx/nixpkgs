@@ -20543,7 +20543,11 @@ with pkgs;
   cryptominisat = callPackage ../applications/science/logic/cryptominisat { };
 
   csdr = callPackage ../applications/radio/csdr { };
+  
+  csdr-lu = callPackage ../applications/radio/csdr-lu { };
 
+  csdreti = callPackage ../applications/radio/csdreti { };
+  
   ctypes_sh = callPackage ../development/libraries/ctypes_sh { };
 
   curlpp = callPackage ../development/libraries/curlpp { };
@@ -23846,6 +23850,11 @@ with pkgs;
     buildPythonPackage buildPythonApplication setuptools pycsdr pydigiham;
   };
 
+  openwebrxplus = callPackage ../applications/radio/openwebrxplus {
+    inherit (python3Packages)
+    buildPythonPackage buildPythonApplication setuptools pycsdr-lu pycsdreti pydigiham;
+  };
+  
   oras = callPackage ../development/tools/oras { };
 
   orcania = callPackage ../development/libraries/orcania { };
