@@ -10628,6 +10628,11 @@ with pkgs;
     buildPythonPackage buildPythonApplication setuptools pycsdr pydigiham;
   };
 
+  openwebrxplus = callPackage ../applications/radio/openwebrxplus {
+    inherit (python3Packages)
+    buildPythonPackage buildPythonApplication setuptools pycsdr-lu pycsdreti pydigiham;
+  };
+
   pcl = libsForQt5.callPackage ../development/libraries/pcl {
     stdenv = if stdenv.hostPlatform.isDarwin then darwin.apple_sdk_11_0.stdenv else stdenv;
     inherit (darwin.apple_sdk_11_0.frameworks) Cocoa AGL OpenGL;
