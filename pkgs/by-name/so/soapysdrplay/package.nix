@@ -5,10 +5,10 @@ stdenv.mkDerivation rec {
   version = "0.4.0";
 
   src = fetchFromGitHub {
-    owner = "pothosware";
+    owner = "luarvique";
     repo = "SoapySDRPlay3";
-    rev = "soapy-sdrplay3-${version}";
-    sha256 = "sha256-WMcAw0uR2o2SrQR4mBtdVEZlJ/ZXRqwo6zMJNsB/5U4=";
+    rev = "367111abbea065f999b613becda87cb0699a3e8d";
+    sha256 = "sha256-jkDIB3U3oxD5CkkPii/dOm5xIlamBfO1WDTp23rXChk=";
   };
 
   nativeBuildInputs = [ cmake pkg-config ];
