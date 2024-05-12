@@ -24476,6 +24476,7 @@ with pkgs;
       soapyremote
       soapyrtlsdr
       soapyuhd
+      soapysdrplay
     ];
   };
 
