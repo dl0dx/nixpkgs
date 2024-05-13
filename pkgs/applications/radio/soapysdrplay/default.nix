@@ -7,8 +7,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "SoapySDRPlay3";
-    rev = version;
-    sha256 = "sha256-EViBNaWHLM0QZyY1bJl/g/ZTO0ZmC1WZuK+8LocjDkQ=";
+    rev = "07a87b9bbcdc04741b2171e062c0abfbe8a0d37e";
+    sha256 = "sha256-FIg1YTKPsCUme0DphdP9YSWlwjeV6vP2D3TmeHj+FaY=";
   };
 
   nativeBuildInputs = [ cmake pkg-config ];
