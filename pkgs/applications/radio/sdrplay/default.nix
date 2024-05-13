@@ -11,7 +11,7 @@ let
   srcs = rec {
     aarch64 = {
       url = "https://www.sdrplay.com/software/SDRplay_RSP_API-ARM64-${version}.run";
-      hash = "sha256-GJPFW6W8Kf4mnczcSLFYfioOMGCfFn2/EIA07VnmVGY=";
+      hash = "sha256-GlPFW6W8Kf4mnczcSLFYfioOMGCfFn2/EIA07VnmVGY=";
     };
 
     x86_64 = {
