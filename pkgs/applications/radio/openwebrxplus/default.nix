@@ -34,8 +34,8 @@ let
     src = fetchFromGitHub {
       owner = "luarvique";
       repo = pname;
-      rev = "870285269143048f850151346980942a12ccf24b";
-      sha256 = "sha256-1H0TJ8QN3b6Lof5TWvyokhCeN+dN7ITwzRvEo2X8OWc=";
+      rev = version;
+      sha256 = "sha256-e0VEv9t4gVDxJEbDJm1aKSJeqlmhT/QimC3x4JJ6ke8=";
     };
 
     nativeBuildInputs = [
@@ -67,8 +67,8 @@ buildPythonApplication rec {
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "openwebrx";
-    rev = "bd4352f6f507ad7a1ab35c1eb12c5939b7630ed0";
-    hash = "sha256-AQUoEzr7baQzWKyEzI8Qk+ZW9nUHgrBkz1x1n4rDBvI=";
+    rev = version;
+    hash = "sha256-Q8o+FEeFCNJCAWo3SPPbWkQbKfOR71Fp4M+7Wz7xGLQ=";
   };
 
   propagatedBuildInputs = [
