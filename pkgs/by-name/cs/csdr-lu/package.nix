@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "csdr";
-    rev = version;
+    rev = "a7d53ebe1fd94fb06d9ddfd00569d3df45d8f64f";
     hash = "sha256-Q7g1OqfpAP6u78zyHjLP2ASGYKNKCAVv8cgGwytZ+cE=";
   };
 
