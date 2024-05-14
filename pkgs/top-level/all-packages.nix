@@ -10630,7 +10630,7 @@ with pkgs;
 
   openwebrxplus = callPackage ../applications/radio/openwebrxplus {
     inherit (python3Packages)
-    buildPythonPackage buildPythonApplication setuptools pycsdr-lu pycsdreti pydigiham;
+    buildPythonPackage buildPythonApplication setuptools pycsdr-lu pycsdreti pydigiham paho-mqtt;
   };
 
   pcl = libsForQt5.callPackage ../development/libraries/pcl {
