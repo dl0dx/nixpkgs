@@ -72,6 +72,8 @@ buildPythonApplication rec {
     hash = "sha256-YVYJK6yYRRVNHgU/vCRqXWSvsxVV4PtynJm+5yiQQc4=";
   };
 
+  patches = [ ./useMagicKey.patch ];
+
   propagatedBuildInputs = [
     setuptools
     csdr-lu
