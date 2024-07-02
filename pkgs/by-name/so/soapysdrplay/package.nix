@@ -2,12 +2,12 @@
 
 stdenv.mkDerivation rec {
   pname = "soapysdr-sdrplay3";
-  version = "0.8.8";
+  version = "0.8.10";
 
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "SoapySDRPlay3";
-    rev = "07a87b9bbcdc04741b2171e062c0abfbe8a0d37e";
+    rev = version;
     sha256 = "sha256-FIg1YTKPsCUme0DphdP9YSWlwjeV6vP2D3TmeHj+FaY=";
   };
 
