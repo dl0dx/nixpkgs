@@ -63,13 +63,13 @@ let
 in
 buildPythonApplication rec {
   pname = "openwebrx";
-  version = "1.2.67";
+  version = "1.2.69";
 
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "openwebrx";
-    rev = "c794ad433bef9d395481d73f74080b93d06101c6";
-    hash = "sha256-+PSx9bt8bdMnWKnylif9rHJGKZtNtGcuSoNifQ1s+Vk=";
+    rev = "f4259eddd1171f6cd1407efc0cf0d85529b6f56e";
+    hash = "sha256-kRjVwcqKQfIK3X8DmQv3B/AZZaw+EibICcSKJYu+P+8=";
   };
 
   propagatedBuildInputs = [
