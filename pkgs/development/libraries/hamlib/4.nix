@@ -1,6 +1,6 @@
 { lib
 , stdenv
-, fetchurl
+, fetchFromGitHub
 , perl
 , swig
 , gd
@@ -16,6 +16,8 @@
 , pythonBindings ? true
 , tclBindings ? true
 , perlBindings ? true
+, autoconf
+, automake
 }:
 let
   python3 = python311; # needs distutils and imp
@@ -24,15 +26,19 @@ stdenv.mkDerivation rec {
   pname = "hamlib";
   version = "4.5.5";
 
-  src = fetchurl {
-    url = "mirror://sourceforge/${pname}/${pname}-${version}.tar.gz";
-    sha256 = "sha256-YByJ8y7SJelSet49ZNDQXSMgLAWuIf+nflnXDuRZf80=";
+  src = fetchFromGitHub {
+    owner = "MarcFontaine";
+    repo = "Hamlib";
+    rev = "4efdf1dffdf2053f509eba8138d1f9cdfa4900d0";
+    hash = "sha256-BLMztoq79lQ2zy+mJ2BBUDfxsCIDSnCPq9bvweLd8oQ=";
   };
 
   nativeBuildInputs = [
     swig
     pkg-config
     libtool
+    autoconf
+    automake
   ];
 
   buildInputs = [
@@ -43,6 +49,10 @@ stdenv.mkDerivation rec {
   ] ++ lib.optionals pythonBindings [ python3 ncurses ]
     ++ lib.optionals tclBindings [ tcl ]
     ++ lib.optionals perlBindings [ perl perlPackages.ExtUtilsMakeMaker ];
+
+  preConfigure = ''
+    ./bootstrap
+  '';
 
   configureFlags = lib.optionals perlBindings [ "--with-perl-binding" ]
     ++ lib.optionals tclBindings [ "--with-tcl-binding" "--with-tcl=${tcl}/lib/" ]
