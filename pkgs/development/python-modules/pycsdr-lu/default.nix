@@ -3,12 +3,12 @@
 buildPythonPackage rec {
   pname = "pycsdr";
 
-  version = "0.18.24-lu";
+  version = "0.18.26-lu";
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "pycsdr";
-    rev = "33af89d2cdf2784346892d61f6a4f3b03ba7148a";
-    hash = "sha256-58IQfQwQP2iZ7W51MKAXjMJ3mGF2xWevsczeKgJ7+c4=";
+    rev = "92efaca4aaf1a8630fb10cd1936c0eb320336b18";
+    hash = "sha256-jNs5Eb3myKOEGD4hYnR8+DEwNXKCFjFmLJDq6qXsUuc=";
   };
 
   propagatedBuildInputs = [ csdr-lu ];
