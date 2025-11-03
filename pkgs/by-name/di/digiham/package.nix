@@ -36,6 +36,8 @@ stdenv.mkDerivation (finalAttrs: {
     cmake
   ];
 
+  cmakeFlags = [ "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" ];
+
   buildInputs = [
     codecserver
     protobuf
