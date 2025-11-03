@@ -11,13 +11,13 @@
 
 stdenv.mkDerivation rec {
   pname = "csdr";
-  version = "0.18.2";
+  version = "0.18.36";
 
   src = fetchFromGitHub {
-    owner = "jketterl";
+    owner = "luarvique";
     repo = "csdr";
-    rev = version;
-    sha256 = "sha256-LdVzeTTIvDQIXRdcz/vpQu/fUgtE8nx1kIEfoiwxrUg=";
+    rev = "70c93d6a9f8befae513912d98d2c203bb6f93195";
+    hash = "sha256-Ih75Y8At4Tx9fTHasHQktnhjYY2708DWdxn/V+8UKT8=";
   };
 
   postPatch = ''
@@ -33,6 +33,8 @@ stdenv.mkDerivation rec {
     cmake
     pkg-config
   ];
+
+  cmakeFlags = [ "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" ];
 
   propagatedBuildInputs = [
     fftwFloat
@@ -52,10 +54,11 @@ stdenv.mkDerivation rec {
   doInstallCheck = true;
 
   meta = with lib; {
-    homepage = "https://github.com/jketterl/csdr";
+    homepage = "https://github.com/luarvique/csdr";
     description = "Simple DSP library and command-line tool for Software Defined Radio";
     license = licenses.gpl3Only;
     platforms = platforms.unix;
     broken = stdenv.hostPlatform.isDarwin;
+    teams = [ teams.c3d2 ];
   };
 }
