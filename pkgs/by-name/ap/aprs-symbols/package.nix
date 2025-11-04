@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mkdir -p $out/share/aprs-symbols
     cp README.md COPYRIGHT.md $out/share/aprs-symbols/
-    cp png/* $out/share/aprs-symbols/
+    cp -r png $out/share/aprs-symbols/
   '';
 
   meta = {
