@@ -12,6 +12,7 @@
   csdr,
   csdreti,
   direwolf,
+  aprs-symbols,
   sox,
   wsjtx,
   codecserver,
@@ -110,6 +111,7 @@ python3Packages.buildPythonApplication rec {
       pycsdr
       pycsdreti
       pydigiham
+#      paho-mqtt
     ]
     ++ [
       js8py
@@ -121,10 +123,16 @@ python3Packages.buildPythonApplication rec {
       codecserver
     ];
 
+  prePatch = ''
+    substituteInPlace owrx/feature.py \
+        --replace "/usr/share/aprs-symbols" "${aprs-symbols}/share/aprs-symbols" \
+    '';
+  
   pythonImportsCheck = [
     "csdr"
     "owrx"
-    "test"
+#    "paho"
+    "test"    
   ];
 
   nativeInstallCheckInputs = [ versionCheckHook ];
