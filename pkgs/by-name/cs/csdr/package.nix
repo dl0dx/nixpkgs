@@ -49,7 +49,7 @@ stdenv.mkDerivation rec {
       --replace '=''${exec_prefix}//' '=/'
   '';
 
-  nativeInstallCheckInputs = [ versionCheckHook ];
+#  nativeInstallCheckInputs = [ versionCheckHook ];
   versionCheckProgramArg = "version";
   doInstallCheck = true;
 

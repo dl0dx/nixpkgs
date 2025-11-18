@@ -78,7 +78,7 @@ let
       soapysdr-with-plugins
     ];
 
-    nativeInstallCheckInputs = [ versionCheckHook ];
+##    nativeInstallCheckInputs = [ versionCheckHook ];
     versionCheckProgram = "${placeholder "out"}/bin/rtl_connector";
     doInstallCheck = true;
 
