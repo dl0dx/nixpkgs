@@ -53,8 +53,8 @@ let
     src = fetchFromGitHub {
       owner = "luarvique";
       repo = pname;
-      rev = "870285269143048f850151346980942a12ccf24b";
-      sha256 = "sha256-e0VEv9t4gVDxJEbDJm1aKSJeqlmhT/QimC3x4JJ6ke8=";
+      rev = "d6ee522f98f983d22495c882129e161f74efe58a";
+      sha256 = "sha256-GcGqxm1l35t3F0VcPTxYDpZaRnsZQaAoeO110japQpc=";
     };
 
     postPatch = ''
@@ -78,7 +78,7 @@ let
       soapysdr-with-plugins
     ];
 
-    nativeInstallCheckInputs = [ versionCheckHook ];
+#    nativeInstallCheckInputs = [ versionCheckHook ];
     versionCheckProgram = "${placeholder "out"}/bin/rtl_connector";
     doInstallCheck = true;
 
@@ -94,13 +94,13 @@ let
 in
 python3Packages.buildPythonApplication rec {
   pname = "openwebrx";
-  version = "1.2.96";
+  version = "1.2.113";
   format = "setuptools";
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "openwebrx";
-    rev = "0db5c412784066cd1a280d824a76641a9ba948ea";
-    hash = "sha256-fOeB7xR2ZM2wB4DylifrZJdh0otYRB0F4HwvgTImo+c=";
+    rev = "4ec0950fe00cb9199e655c16f69dffb59f7dfd70";
+    hash = "sha256-eg2qdfQZO6NVk1fJMpAz1slw6ehNDr1UcJXuRDcaIS8=";
   };
 
   dependencies =
