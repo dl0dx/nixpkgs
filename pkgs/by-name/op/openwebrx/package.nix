@@ -111,7 +111,7 @@ python3Packages.buildPythonApplication rec {
       pycsdr
       pycsdreti
       pydigiham
-#      paho-mqtt
+      paho-mqtt
     ]
     ++ [
       js8py
@@ -126,11 +126,14 @@ python3Packages.buildPythonApplication rec {
   prePatch = ''
     substituteInPlace owrx/feature.py \
         --replace "/usr/share/aprs-symbols" "${aprs-symbols}/share/aprs-symbols"
+    substituteInPlace owrx/reporting/mqtt.py \
+        --replace "client = Client(clientId)" "client = Client(CallbackAPIVersion.VERSION1, clientId)"
     '';
   
   pythonImportsCheck = [
     "csdr"
     "owrx"
+    "paho"
   ];
 
   nativeInstallCheckInputs = [ versionCheckHook ];
