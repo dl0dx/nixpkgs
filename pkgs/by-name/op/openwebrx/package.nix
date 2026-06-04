@@ -94,13 +94,13 @@ let
 in
 python3Packages.buildPythonApplication rec {
   pname = "openwebrx";
-  version = "1.2.113";
+  version = "1.2.115";
   format = "setuptools";
   src = fetchFromGitHub {
-    owner = "luarvique";
+    owner = "MarcFontaine";
     repo = "openwebrx";
-    rev = "4ec0950fe00cb9199e655c16f69dffb59f7dfd70";
-    hash = "sha256-eg2qdfQZO6NVk1fJMpAz1slw6ehNDr1UcJXuRDcaIS8=";
+    rev = "cde58babc0bc09c354e3eae0caeac437ffbd8303";
+    hash = "sha256-I5OZ+SS0kWtm2gIbajRRW9KUTyzpqGhKvUjoHs/j5gU=";
   };
 
   dependencies =
@@ -126,8 +126,6 @@ python3Packages.buildPythonApplication rec {
   prePatch = ''
     substituteInPlace owrx/feature.py \
         --replace "/usr/share/aprs-symbols" "${aprs-symbols}/share/aprs-symbols"
-    substituteInPlace owrx/reporting/mqtt.py \
-        --replace "client = Client(clientId)" "client = Client(CallbackAPIVersion.VERSION1, clientId)"
     '';
   
   pythonImportsCheck = [
