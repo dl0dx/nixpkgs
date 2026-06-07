@@ -43,6 +43,6 @@ buildPythonPackage rec {
     homepage = "https://github.com/luarvique/pycsdr-eti";
     description = "Bindings for the csdreti library";
     license = licenses.gpl3Only;
-    maintainers = teams.c3d2.members ++ [ maintainers.mafo ];
+    maintainers = [ teams.c3d2 ];
   };
 }

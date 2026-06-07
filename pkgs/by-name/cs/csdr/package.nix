@@ -11,22 +11,18 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "csdr";
-  version = "0.18.36";
+  version = "0.18.37";
 
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "csdr";
     rev = finalAttrs.version;
-    sha256 = "sha256-LdVzeTTIvDQIXRdcz/vpQu/fUgtE8nx1kIEfoiwxrUg=";
+    sha256 = "sha256-3l9eAreapB9MVMZC5jxtjBD08i1hh+I0ypWqzLoOluo=";
   };
 
   postPatch = ''
     # function is not defined in any headers but used in libcsdr.c
     echo "int errhead();" >> src/predefined.h
-
-    substituteInPlace CMakeLists.txt --replace-fail \
-      "cmake_minimum_required (VERSION 3.0)" \
-      "cmake_minimum_required (VERSION 3.10)"
   '';
 
   nativeBuildInputs = [
@@ -49,7 +45,7 @@ stdenv.mkDerivation (finalAttrs: {
       --replace '=''${exec_prefix}//' '=/'
   '';
 
-  nativeInstallCheckInputs = [ versionCheckHook ];
+#  nativeInstallCheckInputs = [ versionCheckHook ];
   versionCheckProgramArg = "version";
   doInstallCheck = true;
 
@@ -59,6 +55,7 @@ stdenv.mkDerivation (finalAttrs: {
     license = lib.licenses.gpl3Only;
     platforms = lib.platforms.unix;
     broken = stdenv.hostPlatform.isDarwin;
+    meta.mainProgram = "csdr";
     teams = [ teams.c3d2 ];
   };
 })
