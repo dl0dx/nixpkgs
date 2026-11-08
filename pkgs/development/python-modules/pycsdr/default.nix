@@ -9,12 +9,12 @@ buildPythonPackage rec {
   pname = "pycsdr";
   format = "setuptools";
 
-  version = "0.18.37";
+  version = "0.18.43";
   src = fetchFromGitHub {
-    owner = "luarvique";
+    owner = "MarcFontaine";
     repo = "pycsdr";
-    rev = "db2050bd02ddd1d630cee8d27aaa4432767717ca";
-    hash = "sha256-TB8UaT/z8qjaQ9N6s2MmWA5YvM533YyRpnweqLxy+QM=";
+    rev = "8d70f51735a5dc661b7e1a067c3d7c14ca58c7a7";
+    hash = "sha256-qJa2ObhzU4gEg9BXjSJU8xp/6flSPHLnITCck25k+cI=";
   };
 
   postPatch = ''
