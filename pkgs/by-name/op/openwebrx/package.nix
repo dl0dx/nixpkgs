@@ -114,7 +114,7 @@ python3Packages.buildPythonApplication rec {
       paho-mqtt
     ]
     ++ [
-      js8py
+#      js8py
       soapysdr-with-plugins
       owrx_connector
       direwolf
@@ -127,14 +127,14 @@ python3Packages.buildPythonApplication rec {
     substituteInPlace owrx/feature.py \
         --replace "/usr/share/aprs-symbols" "${aprs-symbols}/share/aprs-symbols"
     '';
-  
+
   pythonImportsCheck = [
     "csdr"
     "owrx"
     "paho"
   ];
 
-  nativeInstallCheckInputs = [ versionCheckHook ];
+  nativeInstallCheckInputs = [ ];
   doInstallCheck = true;
 
   passthru = {

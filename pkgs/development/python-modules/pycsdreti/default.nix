@@ -6,12 +6,13 @@
   setuptools,
   csdreti,
   pycsdr,
+  csdr,
   fftw,
 }:
 
 buildPythonPackage rec {
-  pname = "pycsdreti";
-  version = "0.1.0-dev";
+  pname = "pycsdr";
+  version = "0.18.2";
   pyproject = true;
 
   src = fetchFromGitHub {
@@ -26,6 +27,7 @@ buildPythonPackage rec {
     csdreti
   ];
   buildInputs = [
+    csdr
     pycsdr
     setuptools
   ];

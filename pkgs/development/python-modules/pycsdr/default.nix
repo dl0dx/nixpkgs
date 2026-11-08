@@ -22,6 +22,7 @@ buildPythonPackage rec {
       --replace-fail "PyModuleDef_HEAD_INIT," ".m_base = PyModuleDef_HEAD_INIT,"
   '';
 
+  buildInputs = [ csdr ];
   # has no tests
   doCheck = false;
   pythonImportsCheck = [ "pycsdr" ];
@@ -30,6 +31,6 @@ buildPythonPackage rec {
     homepage = "https://github.com/luarvique/pycsdr";
     description = "Bindings for the csdr library";
     license = lib.licenses.gpl3Only;
-    teams = [ lib.teams.c3d2 ];
+    maintainers = [ lib.maintainers.mafo ];
   };
 }

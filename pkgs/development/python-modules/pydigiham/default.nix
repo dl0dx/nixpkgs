@@ -5,6 +5,7 @@
   python,
   digiham,
   pycsdr,
+  csdr,
   codecserver,
 }:
 
@@ -29,6 +30,7 @@ buildPythonPackage rec {
   buildInputs = [
     codecserver
     pycsdr
+    csdr
   ];
   # make pycsdr header files available
   preBuild = ''
