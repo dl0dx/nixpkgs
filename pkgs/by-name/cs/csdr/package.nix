@@ -11,13 +11,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "csdr";
-  version = "0.18.37";
+  version = "0.18.43";
 
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "csdr";
     rev = finalAttrs.version;
-    sha256 = "sha256-3l9eAreapB9MVMZC5jxtjBD08i1hh+I0ypWqzLoOluo=";
+    sha256 = "sha256-vEbweSYA+udhTPwbgB6QdxMhNySvcw96tCUx7Qrioa0=";
   };
 
   postPatch = ''
@@ -56,6 +56,6 @@ stdenv.mkDerivation (finalAttrs: {
     platforms = lib.platforms.unix;
     broken = stdenv.hostPlatform.isDarwin;
     meta.mainProgram = "csdr";
-    teams = [ teams.c3d2 ];
+    maintainers = [ lib.maintainers.mafo ];
   };
 })

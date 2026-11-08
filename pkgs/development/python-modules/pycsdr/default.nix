@@ -9,18 +9,13 @@ buildPythonPackage rec {
   pname = "pycsdr";
   format = "setuptools";
 
-  version = "0.18.37";
+  version = "0.18.43";
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "pycsdr";
-    rev = "db2050bd02ddd1d630cee8d27aaa4432767717ca";
-    hash = "sha256-TB8UaT/z8qjaQ9N6s2MmWA5YvM533YyRpnweqLxy+QM=";
+    rev = "e0029bdfb135ff09557dc296ef9772b17ff4fe1a";
+    hash = "sha256-Qd0QNfrbmhxKC3mvzAmMFtKmE+tUdwumcXKEfD6ZYhA=";
   };
-
-  postPatch = ''
-    substituteInPlace src/pycsdr.cpp \
-      --replace-fail "PyModuleDef_HEAD_INIT," ".m_base = PyModuleDef_HEAD_INIT,"
-  '';
 
   buildInputs = [ csdr ];
   # has no tests

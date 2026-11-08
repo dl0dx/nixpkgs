@@ -94,13 +94,13 @@ let
 in
 python3Packages.buildPythonApplication rec {
   pname = "openwebrx";
-  version = "1.2.115";
+  version = "1.2.130";
   format = "setuptools";
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "openwebrx";
-    rev = "fd62ff2cfeda6c8a269473ee25b0f163e082eced";
-    hash = "sha256-ydhpln2YMcfL6LuBDlMIKasvKrxG89WjeUCdsV8iKc4=";
+    rev = "25447d99e46a8927062bb14fc5863c47c758acb4";
+    hash = "sha256-no1LHw40TxDRhcZZNaM+oN25D+ZNWnlJxorSTXj9iv4=";
   };
 
   dependencies =
@@ -146,6 +146,6 @@ python3Packages.buildPythonApplication rec {
     description = "Simple DSP library and command-line tool for Software Defined Radio";
     mainProgram = "openwebrx";
     license = licenses.gpl3Only;
-    teams = [ teams.c3d2 ];
+    maintainers = [ lib.maintainers.mafo ];
   };
 }
